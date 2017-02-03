@@ -1,6 +1,6 @@
 /*------------------------------------------------------*/
-/* Prog    : Tp1_IFT3205-1-4.c                          */
-/* Auteur  : Guillaume Riou, Nicolas Hurtubise          */
+/* Prog    : Tp1_IFT3205-1-1.c                          */
+/* Auteur  :                                            */
 /* Date    : 18/05/2010                                 */
 /* version :                                            */ 
 /* langage : C                                          */
@@ -21,7 +21,6 @@
 /* DEFINITIONS -----------------------------------*/   
 /*------------------------------------------------*/
 #define NAME_VISUALISER "display "
-// MODIFIER CECI POUR CHANGER L'IMAGE TRAITÉE
 #define NAME_IMG_IN  "D1r"
 #define NAME_IMG_OUT "image-Tp1_IFT3205-1-1"
 
