@@ -22,7 +22,7 @@
 /*------------------------------------------------*/
 #define NAME_VISUALISER "display "
 #define NAME_IMG_IN  "D1r"
-#define NAME_IMG_OUT "image-Tp1_IFT3205-1-1"
+#define NAME_IMG_OUT "image-Tp1_IFT3205-1-3"
 
 /*------------------------------------------------*/
 /* PROTOTYPE DE FONCTIONS  -----------------------*/   
