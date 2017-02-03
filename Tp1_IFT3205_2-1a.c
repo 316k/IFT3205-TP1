@@ -61,17 +61,23 @@ int main(int argc,char **argv) {
 
     /*Module*/
     Mod(MatriceImgM,MatriceImgR,MatriceImgI,length,width);
-    Mult(MatriceImgM, 100, length,width);
 
+    /*Pour visu*/
+    for(i=0;i<length;i++) 
+        for(j=0;j<width;j++) 
+        {
+            MatriceImgM[i][j] = log(1 + MatriceImgM[i][j]);
+        }
+    
     Recal(MatriceImgM,length,width);
-
+  
     /*Sauvegarde de MatriceImgM sous forme d'image pgm*/
     SaveImagePgm(NAME_IMG_OUT,MatriceImgM,length,width);
 
     /*Liberation memoire pour les matrices*/
     free_fmatrix_2d(MatriceImgR);
-    free_fmatrix_2d(MatriceImgI);
-    free_fmatrix_2d(MatriceImgM);
+    free_fmatrix_2d(MatriceImgI); 
+    free_fmatrix_2d(MatriceImgM);    
 
     /*Commande systeme: visualisation de Ingout.pgm*/
     strcpy(BufSystVisuImg,NAME_VISUALISER);
