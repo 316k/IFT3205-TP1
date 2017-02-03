@@ -22,7 +22,7 @@
 /*------------------------------------------------*/
 #define NAME_VISUALISER "display "
 #define NAME_IMG_IN  "photograph"
-#define NAME_IMG_OUT "image-Tp1_IFT3205-2-1a"
+#define NAME_IMG_OUT "image-Tp1_IFT3205-2-1b"
 
 /*------------------------------------------------*/
 /* PROTOTYPE DE FONCTIONS  -----------------------*/   
@@ -64,7 +64,7 @@ int main(int argc,char **argv) {
     for(i=0;i<length;i++) 
         for(j=0;j<width;j++) 
         {
-            if(i >= length/2-30 && i <= length/2+30 && j <= width/2+30 && j >= width/2-30) {
+            if(sqrt((i - length/2) * (i - length/2) + (j - width/2) * (j - width/2)) > 7) {
                 MatriceImgI[i][j]=0.0;
                 MatriceImgR[i][j]=0.0;
             }

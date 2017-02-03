@@ -22,7 +22,7 @@
 /*------------------------------------------------*/
 #define NAME_VISUALISER "display "
 #define NAME_IMG_IN  "photograph"
-#define NAME_IMG_OUT "image-Tp1_IFT3205-2-1a"
+#define NAME_IMG_OUT "image-Tp1_IFT3205-2-2"
 
 /*------------------------------------------------*/
 /* PROTOTYPE DE FONCTIONS  -----------------------*/   
@@ -64,17 +64,20 @@ int main(int argc,char **argv) {
     for(i=0;i<length;i++) 
         for(j=0;j<width;j++) 
         {
-            if(i >= length/2-30 && i <= length/2+30 && j <= width/2+30 && j >= width/2-30) {
+            /*if(sqrt((i - length/2) * (i - length/2) + (j - width/2) * (j - width/2)) > 2) {
+                
+            }*/
+            if(!((i==2+length/2 || i==2-length/2) && (j==1+width/2 || j == 1 - width/2)){
                 MatriceImgI[i][j]=0.0;
                 MatriceImgR[i][j]=0.0;
             }
-            
+
         }
     /*Module*/
     
     IFFTDD(MatriceImgR,MatriceImgI,length,width);
     PreFFT_Translation(MatriceImgR, length, width);
-    Recal(MatriceImgR, length, width);
+    //Recal(MatriceImgR, length, width);
     /*Sauvegarde de MatriceImgM sous forme d'image pgm*/
     SaveImagePgm(NAME_IMG_OUT,MatriceImgR,length,width);
 
