@@ -21,8 +21,8 @@
 /* DEFINITIONS -----------------------------------*/   
 /*------------------------------------------------*/
 #define NAME_VISUALISER "display "
-#define NAME_IMG_IN  "photograph"
-#define NAME_IMG_OUT "image-Tp1_IFT3205-2-1a"
+#define NAME_IMG_IN  "Monrstein"
+#define NAME_IMG_OUT "image-Tp1_IFT3205-3-2a"
 
 /*------------------------------------------------*/
 /* PROTOTYPE DE FONCTIONS  -----------------------*/   
@@ -60,11 +60,12 @@ int main(int argc,char **argv) {
     FFTDD(MatriceImgR,MatriceImgI,length,width);
 
     
-
+    int seuil = 18;
     for(i=0;i<length;i++) 
         for(j=0;j<width;j++) 
         {
-            if(i >= length/2-30 && i <= length/2+30 && j <= width/2+30 && j >= width/2-30) {
+            
+            if(!(i >= length/2-seuil && i <= length/2+seuil && j <= width/2+seuil && j >= width/2-seuil)) {
                 MatriceImgI[i][j]=0.0;
                 MatriceImgR[i][j]=0.0;
             }
