@@ -1,7 +1,11 @@
-#Tp 1 Traitement de signal
-##Remis par Nicolas Hurtubise et Guillaume Riou
+# TP 1 Traitement de signal
 
-###1.4
+Remis par :
+* Nicolas Hurtubise
+* Guillaume Riou
+
+## 1.4
+
 ![](image-TpIFT3205-1-4a.png) Cette représentation fréquentielle est associé à l'image D1r. 
 
 On peut voir que cette image à une forte composante horizontale qui se traduit dans le domaine fréquentiel comme des lignes verticales puisqu'une ligne horizontale contractée dans l'axe ou elle est longue et étendue dans l'axe ou elle est étroite donnera une ligne verticale. 
@@ -12,7 +16,7 @@ On déduit aussi la composante verticale des briques par des lignes horizontales
 
 ![](image-TpIFT3205-1-4c.png) Cette représentation fréquentielle est associée à l'image D46r puisque c'est la seule image à avoir de fortes composantes diagonales que l'on voit aussi dans le domaine fréquentiel.
 
-### 3-1
+## 3-1
 
 L'image `Monrstein.pgm` est composée des *hautes fréquences* d'un portrait d'Albert Einstein et des *bases fréquences* d'un portrait de Marylin Monroe.
 
@@ -25,7 +29,3 @@ Pour construire cette image, on pourrait faire des opérations similaires à cel
 On pourrait également se base la distance Euclidienne, comme dans le reste du numéro 2.
 
 On peut noter la présence d'ondulations dans l'image (du *ringing*), ce qui indique que les filtres appliqués créaient effectivement des discontinuités dans le spectre résultant de l'opération.
-
-=======
-###3
->>>>>>> 181397811d168cdae404081c45ff4c6e388e7552
