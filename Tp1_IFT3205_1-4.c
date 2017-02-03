@@ -77,7 +77,7 @@ int main(int argc,char **argv) {
 
         char filename[] = "image-TpIFT3205-1-4_";
         filename[19] = 'a' + k;
-        printf("wat");
+
         /*Sauvegarde de MatriceImgM sous forme d'image pgm*/
         SaveImagePgm(filename, MatriceImgM, length, width);
 
