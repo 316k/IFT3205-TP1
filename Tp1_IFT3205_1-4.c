@@ -1,6 +1,6 @@
 /*------------------------------------------------------*/
 /* Prog    : Tp1_IFT3205-1-1.c                          */
-/* Auteur  :                                            */
+/* Auteur  : Guillaume Riou, Nicolas Hurtubise          */
 /* Date    : 18/05/2010                                 */
 /* version :                                            */ 
 /* langage : C                                          */
@@ -21,8 +21,7 @@
 /* DEFINITIONS -----------------------------------*/   
 /*------------------------------------------------*/
 #define NAME_VISUALISER "display "
-#define NAME_IMG_IN  "D1r"
-#define NAME_IMG_OUT "image-Tp1_IFT3205-1-1"
+#define NAME_IMG_OUT "image-Tp1_IFT3205-1-"
 
 /*------------------------------------------------*/
 /* PROTOTYPE DE FONCTIONS  -----------------------*/   
@@ -40,52 +39,61 @@ int main(int argc,char **argv) {
     float** MatriceImgI;
     float** MatriceImgM;
 
-    /*Allocation memoire pour la matrice image*/
-    MatriceImgR=LoadImagePgm(NAME_IMG_IN,&length,&width);
-    MatriceImgI=fmatrix_allocate_2d(length,width);
-    MatriceImgM=fmatrix_allocate_2d(length,width);
+    char* filenames[] = {
+        "D1r", "D11r", "D46r"
+    };
 
-    /*Initialisation a zero de toutes les matrices */
-    for(i=0;i<length;i++) 
-        for(j=0;j<width;j++) 
-        {
-            MatriceImgI[i][j]=0.0;
-            MatriceImgM[i][j]=0.0;
-        }
+    for(k=0; k<3; k++) {
+        /*Allocation memoire pour la matrice image*/
+        MatriceImgR = LoadImagePgm(filenames[k], &length, &width);
+        MatriceImgI = fmatrix_allocate_2d(length,width);
+        MatriceImgM = fmatrix_allocate_2d(length,width);
+        
+        /*Initialisation a zero de toutes les matrices */
+        for(i=0;i<length;i++) 
+            for(j=0;j<width;j++) 
+            {
+                MatriceImgI[i][j]=0.0;
+                MatriceImgM[i][j]=0.0;
+            }
 
-    // Traitement pour recentrer l'harmonique 0 de la TF au centre de l'image
-    PreFFT_Translation(MatriceImgR, length, width);
+        // Traitement pour recentrer l'harmonique 0 de la TF au centre de l'image
+        PreFFT_Translation(MatriceImgR, length, width);
   
-    /*FFT*/
-    FFTDD(MatriceImgR,MatriceImgI,length,width);
+        /*FFT*/
+        FFTDD(MatriceImgR,MatriceImgI,length,width);
 
-    /*Module*/
-    Mod(MatriceImgM,MatriceImgR,MatriceImgI,length,width);
+        /*Module*/
+        Mod(MatriceImgM,MatriceImgR,MatriceImgI,length,width);
 
-    /*Pour visu*/
-    for(i=0;i<length;i++) 
-        for(j=0;j<width;j++) 
-        {
-            MatriceImgM[i][j] = log(1 + MatriceImgM[i][j]);
-        }
+        /*Pour visu*/
+        for(i=0;i<length;i++) 
+            for(j=0;j<width;j++) 
+            {
+                MatriceImgM[i][j] = log(1 + MatriceImgM[i][j]);
+            }
     
-    Recal(MatriceImgM,length,width);
-  
-    /*Sauvegarde de MatriceImgM sous forme d'image pgm*/
-    SaveImagePgm(NAME_IMG_OUT,MatriceImgM,length,width);
+        Recal(MatriceImgM,length,width);
 
-    /*Liberation memoire pour les matrices*/
-    free_fmatrix_2d(MatriceImgR);
-    free_fmatrix_2d(MatriceImgI); 
-    free_fmatrix_2d(MatriceImgM);    
+        char filename[] = "image-TpIFT3205-1-4_";
+        filename[19] = 'a' + k;
 
-    /*Commande systeme: visualisation de Ingout.pgm*/
-    strcpy(BufSystVisuImg,NAME_VISUALISER);
-    strcat(BufSystVisuImg,NAME_IMG_OUT);
-    strcat(BufSystVisuImg,".pgm&");
-    printf(" %s",BufSystVisuImg);
-    system(BufSystVisuImg);
+        /*Sauvegarde de MatriceImgM sous forme d'image pgm*/
+        SaveImagePgm(filename, MatriceImgM, length, width);
 
+        /*Liberation memoire pour les matrices*/
+        free_fmatrix_2d(MatriceImgR);
+        free_fmatrix_2d(MatriceImgI); 
+        free_fmatrix_2d(MatriceImgM);    
+        
+        /*Commande systeme: visualisation de Ingout.pgm*/
+        /* strcpy(BufSystVisuImg, NAME_VISUALISER); */
+        /* strcat(BufSystVisuImg, NAME_IMG_OUT); */
+        /* strcat(BufSystVisuImg, ".pgm&"); */
+        /* printf(" %s", BufSystVisuImg); */
+        /* system(BufSystVisuImg); */
+    }
+    
     /*retour sans probleme*/ 
     printf("\n C'est fini ... \n\n");
     return 0; 	 

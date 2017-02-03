@@ -20,9 +20,9 @@ Vous devez fournir les programmes (qui doivent produire les images suivantes) su
      TpIFT3205-1-3.c
        image-TpIFT3205-1-3.pgm (texture D1R.pgm recentrée et rehaussé avec la fonction log)
        
-       [image-TpIFT3205-1-4a.pgm
-       image-TpIFT3205-1-4b.pgm
-       image-TpIFT3205-1-4c.pgm]
+x       [image-TpIFT3205-1-4a.pgm
+x       image-TpIFT3205-1-4b.pgm
+x       image-TpIFT3205-1-4c.pgm]
 
      [5 pts]
      TpIFT3205-2-1a.c
