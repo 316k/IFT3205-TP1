@@ -8,13 +8,13 @@ Remis par :
 
 ![](image-TpIFT3205-1-4a.png) Cette représentation fréquentielle est associé à l'image D1r. 
 
-On peut voir que cette image à une forte composante horizontale qui se traduit dans le domaine fréquentiel comme des lignes verticales puisqu'une ligne horizontale contractée dans l'axe ou elle est longue et étendue dans l'axe ou elle est étroite donnera une ligne verticale. 
+On peut voir que l'image a des fortes discontinuités horizontales, ce qui se traduit dans le domaine fréquentiel par des lignes verticales. Une ligne dilatée dans l'axe horizontal spatial sera contractée dans l'axe équivalent spectral et une ligne contractée verticalement au niveau spatial sera dilatée verticalement au niveau spectral.
 
 On déduit aussi la composante verticale des briques par des lignes horizontales dans le domaine fréquentielle mais vu que cette composante verticale est moins forte que la composante horizontale, les lignes horizontales sont moins présentes dans le domaine fréquentiel.
 
-![](image-TpIFT3205-1-4b.png) Cette représentation fréquentielle est associée à l'image D11r puisque cette image se distingue par ses discontinuités verticales entrecoupés par de petites lignes horizontales. On voit dans cette représentation le reflet de l'image avec des direction inversées par le processus expliqué pour la première image.
+![](image-TpIFT3205-1-4b.png) Cette représentation fréquentielle est associée à l'image D11r puisque cette image se distingue par ses discontinuités verticales entrecoupés par de petites lignes diagonales. On voit dans cette représentation le reflet de l'image avec des directions inversées par le même processus qu'expliqué pour la première image.
 
-![](image-TpIFT3205-1-4c.png) Cette représentation fréquentielle est associée à l'image D46r puisque c'est la seule image à avoir de fortes composantes diagonales que l'on voit aussi dans le domaine fréquentiel.
+![](image-TpIFT3205-1-4c.png) Cette représentation fréquentielle est associée à l'image D46r puisque c'est la seule image à avoir de fortes discontinuités diagonales, ce que l'on voit aussi dans le domaine fréquentiel.
 
 ## 3-1
 
@@ -29,3 +29,5 @@ Pour construire cette image, on pourrait faire des opérations similaires à cel
 On pourrait également se base la distance Euclidienne, comme dans le reste du numéro 2.
 
 On peut noter la présence d'ondulations dans l'image (du *ringing*), ce qui indique que les filtres appliqués créaient effectivement des discontinuités dans le spectre résultant de l'opération.
+
+On pourrait éviter l'effet de *ringing* en utilisant un filtre plus doux, par exemple en utilisant un filtre passe-bas gaussien (plutôt que carré) pour l'image de *Marylin Monroe* et en utilisant le filtre passe-haut gaussien complémentaire sur l'image de *Albert Einstein*.
