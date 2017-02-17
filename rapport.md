@@ -6,7 +6,7 @@ Remis par :
 
 ## 1.4
 
-![](image-TpIFT3205-1-4a.png) Cette représentation fréquentielle est associé à l'image D1r. 
+![](image-TpIFT3205-1-4a.png) Cette représentation fréquentielle est associée à l'image D1r. 
 
 On peut voir que l'image a des fortes discontinuités horizontales, ce qui se traduit dans le domaine fréquentiel par des lignes verticales. Une ligne dilatée dans l'axe horizontal spatial sera contractée dans l'axe équivalent spectral et une ligne contractée verticalement au niveau spatial sera dilatée verticalement au niveau spectral.
 
@@ -22,11 +22,11 @@ L'image `Monrstein.pgm` est composée des *hautes fréquences* d'un portrait d'A
 
 Pour construire cette image, on pourrait faire des opérations similaires à celle réalisée en 2a[1] :
 
-1. Mettre à zéro les basses fréquences de rang `(ε,ε)` de l'image d'Albert Einstein en dessous d'un certain seuil `|ε| <= seuil`
-2. Mettre à zéro les hautes fréquences de rang `(ε,ε)` de l'image de Marylin Monroe au-delà d'un certain seuil `|ε| > seuil`
+1. Mettre à zéro les basses fréquences de rang `(e,e)` de l'image d'Albert Einstein en dessous d'un certain seuil `|e| <= seuil`
+2. Mettre à zéro les hautes fréquences de rang `(e,e)` de l'image de Marylin Monroe au-delà d'un certain seuil `|e| > seuil`
 3. Supperposer les deux spectres et faire une transformée de Fourier inverse pour retrouver l'image voulue
 
-On pourrait également se base la distance Euclidienne, comme dans le reste du numéro 2.
+On pourrait également baser le seuil sur une distance Euclidienne par rapport au centre de l'image, comme dans le reste du numéro 2.
 
 On peut noter la présence d'ondulations dans l'image (du *ringing*), ce qui indique que les filtres appliqués créaient effectivement des discontinuités dans le spectre résultant de l'opération.
 
